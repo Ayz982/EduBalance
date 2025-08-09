@@ -323,16 +323,17 @@
         <!-- Блок 5: Тест-опитування -->
         <section id="survey" class="py-16 bg-f0f4f8">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto p-8 lg:p-12 bg-white rounded-3xl shadow-xl text-center">
+                <!-- Оновлено: прибрано обмеження max-w-4xl, щоб опитування займало більше місця на мобільних пристроях, і додано адаптивні відступи -->
+                <div class="p-4 bg-white rounded-3xl shadow-xl text-center max-w-4xl mx-auto">
                     <h2 class="text-3xl sm:text-4xl font-bold text-slate-800">Візьміть участь у нашому дослідженні</h2>
                     <p class="mt-4 text-lg text-slate-600">Пройдіть анонімне опитування, щоб допомогти нам глибше зрозуміти проблему емоційного вигорання серед педагогів.</p>
-                    <!-- Виправлено: видалено співвідношення сторін і встановлено фіксовану висоту для кращої читабельності на мобільних пристроях -->
-                    <div class="mt-8 overflow-hidden rounded-3xl shadow-lg h-[600px]">
+                    <!-- Оновлено: Прибрано фіксовану висоту, додано мінімальну висоту та відносний розмір, щоб краще адаптуватися до різних екранів -->
+                    <div class="mt-8 overflow-hidden rounded-3xl shadow-lg relative min-h-[700px] h-full">
                         <iframe 
                             src="https://docs.google.com/forms/d/e/1FAIpQLSdxKpiLi0R7UjwDLmPj2V5qbSdT1yF1oxfEB7N4jdIyIYn7Lw/viewform?embedded=true" 
                             title="Опитування Google Forms"
                             frameborder="0" 
-                            class="w-full h-full border-0">
+                            class="absolute top-0 left-0 w-full h-full border-0">
                             Завантаження…
                         </iframe>
                     </div>
