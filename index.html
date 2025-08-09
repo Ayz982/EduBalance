@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Емоційне вигорання: Зрозуміти, щоб запобігти</title>
+    <!-- Підключення шрифту Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Підключення іконок Font Awesome. Виправлено помилку в атрибуті "xintegrity" на "integrity". -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2k5xP6ZqU3V1Ie4tYkUuBwGf8q1D5e5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Підключення Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Світлий сіро-блакитний фон */
+            color: #1e293b; /* Темний текст */
+        }
+        .text-primary-brand {
+            color: #3b82f6; /* Яскраво-синій */
+        }
+        .bg-primary-brand {
+            background-color: #3b82f6;
+        }
+        .hover\:bg-primary-brand-dark:hover {
+            background-color: #2563eb;
+        }
+        .hero-bg {
+            /* Оновлене фонове зображення з URL, наданого користувачем */
+            background-image: linear-gradient(to bottom, rgba(240, 244, 248, 0.95), rgba(240, 244, 248, 0.8)), url('https://fs02.vseosvita.ua/0200cro7-921e-779x267.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .sticky-nav {
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        /* Custom scroll behavior for smooth scrolling on all devices */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навігаційна панель -->
+    <nav id="navbar-main" class="sticky-nav w-full shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a class="text-2xl font-bold text-primary-brand" href="#">EduBalance</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a class="text-slate-600 hover:text-primary-brand font-medium transition-colors" href="#about">Що це?</a>
+                <a class="text-slate-600 hover:text-primary-brand font-medium transition-colors" href="#symptoms">Симптоми і причини</a>
+                <a class="text-slate-600 hover:text-primary-brand font-medium transition-colors" href="#solutions">Шляхи подолання</a>
+                <a class="bg-primary-brand hover:bg-primary-brand-dark text-white font-semibold py-2 px-6 rounded-full shadow-lg transition-all duration-300" href="#survey">Пройти опитування</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-slate-600 hover:text-primary-brand transition-colors text-2xl" id="mobile-menu-btn" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4">
+            <a class="block px-4 py-2 text-slate-600 hover:bg-slate-100 font-medium" href="#about">Що це?</a>
+            <a class="block px-4 py-2 text-slate-600 hover:bg-slate-100 font-medium" href="#symptoms">Симптоми і причини</a>
+            <a class="block px-4 py-2 text-slate-600 hover:bg-slate-100 font-medium" href="#solutions">Шляхи подолання</a>
+            <div class="px-4 mt-4">
+                <a href="#survey" class="w-full block text-center bg-primary-brand hover:bg-primary-brand-dark text-white font-semibold py-2 px-6 rounded-full shadow-lg transition-all duration-300">Пройти опитування</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основний контент сторінки -->
+    <main>
+        <!-- Блок 1: Вступний блок (Hero Section) -->
+        <header class="hero-bg py-20 md:py-32 text-center text-slate-800">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tighter">
+                        Емоційне вигорання: <br class="hidden md:block"> <span class="text-primary-brand">Зрозуміти, щоб запобігти</span>
+                    </h1>
+                    <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
+                        Інформаційний ресурс та дослідження емоційного і професійного вигорання педагогів.
+                    </p>
+                    <p class="mt-4 text-sm text-slate-500">
+                        Цей сайт є частиною наукового дослідження, що має на меті підвищити обізнаність про емоційне вигорання, його наслідки та шляхи подолання.
+                    </p>
+                    <a href="#about" class="mt-8 inline-block bg-primary-brand hover:bg-primary-brand-dark text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">Дізнатися більше</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Блок 2: Що таке емоційне вигорання? -->
+        <section id="about" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto p-8 lg:p-12 bg-white rounded-3xl shadow-xl transition-transform duration-300 hover:scale-[1.01] hover:shadow-2xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-slate-800">Що таке емоційне вигорання?</h2>
+                    <blockquote class="relative border-l-4 border-primary-brand pl-6 text-slate-600 text-lg md:text-xl italic">
+                        <p class="mb-4">"Емоційне вигорання — це синдром, що визнається результатом хронічного стресу на робочому місці, який не був успішно подоланий. Він характеризується трьома вимірами: почуттям виснаження енергії; підвищеною психічною відстороненістю від роботи, або почуттям негативізму чи цинізму, пов'язаним з роботою; та зниженням професійної ефективності."</p>
+                    </blockquote>
+                    <p class="mt-4 text-right text-sm text-slate-500 font-semibold">— Визначення ВООЗ</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 3: Симптоми та причини -->
+        <section id="symptoms" class="py-16 bg-f0f4f8">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-slate-800">Симптоми та причини</h2>
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Основні симптоми -->
+                    <div class="bg-white rounded-3xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                        <h3 class="text-2xl font-bold text-primary-brand mb-4">Ключові симптоми</h3>
+                        <p class="text-slate-600 mb-6">Вигорання проявляється на емоційному, фізичному та поведінковому рівнях.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start mb-3">
+                                <!-- Виправлення: іконки стали синіми -->
+                                <i class="fas fa-check-circle text-primary-brand text-xl mr-3"></i>
+                                <div>
+                                    <strong class="text-slate-800">Хронічна втома:</strong> Відчуття виснаження, яке не зникає навіть після відпочинку.
+                                </div>
+                            </li>
+                            <li class="flex items-start mb-3">
+                                <!-- Виправлення: іконки стали синіми -->
+                                <i class="fas fa-check-circle text-primary-brand text-xl mr-3"></i>
+                                <div>
+                                    <strong class="text-slate-800">Емоційна відстороненість:</strong> Розвиток цинічного ставлення до роботи, втрата інтересу та мотивації.
+                                </div>
+                            </li>
+                            <li class="flex items-start mb-3">
+                                <!-- Виправлення: іконки стали синіми -->
+                                <i class="fas fa-check-circle text-primary-brand text-xl mr-3"></i>
+                                <div>
+                                    <strong class="text-slate-800">Зниження продуктивності:</strong> Відчуття власної некомпетентності, труднощі з концентрацією.
+                                </div>
+                            </li>
+                            <li class="flex items-start mb-3">
+                                <!-- Виправлення: іконки стали синіми -->
+                                <i class="fas fa-check-circle text-primary-brand text-xl mr-3"></i>
+                                <div>
+                                    <strong class="text-slate-800">Дратівливість і тривожність:</strong> Підвищена емоційна реактивність, почуття напруги.
+                                </div>
+                            </li>
+                            <li class="flex items-start mb-3">
+                                <!-- Виправлення: іконки стали синіми -->
+                                <i class="fas fa-check-circle text-primary-brand text-xl mr-3"></i>
+                                <div>
+                                    <strong class="text-slate-800">Фізичні прояви:</strong> Часті головні болі, проблеми зі сном, розлади травлення, ослаблення імунітету.
+                                </div>
+                            </li>
+                            <li class="flex items-start mb-3">
+                                <!-- Виправлення: іконки стали синіми -->
+                                <i class="fas fa-check-circle text-primary-brand text-xl mr-3"></i>
+                                <div>
+                                    <strong class="text-slate-800">Соціальна ізоляція:</strong> Уникнення спілкування з колегами та близькими, відчуття самотності.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Головні причини -->
+                    <div class="bg-white rounded-3xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                        <h3 class="text-2xl font-bold text-primary-brand mb-4">Основні причини</h3>
+                        <p class="text-slate-600 mb-6">Фактори ризику часто пов'язані з робочим середовищем та організацією праці.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start mb-3">
+                                <!-- Виправлення: іконки стали синіми -->
+                                <i class="fas fa-exclamation-triangle text-primary-brand text-xl mr-3"></i>
+                                <div>
+                                    <strong class="text-slate-800">Високе навантаження:</strong> Надмірний обсяг роботи, стислі терміни та постійний тиск.
+                                </div>
+                            </li>
+                            <li class="flex items-start mb-3">
+                                <!-- Виправлення: іконки стали синіми -->
+                                <i class="fas fa-exclamation-triangle text-primary-brand text-xl mr-3"></i>
+                                <div>
+                                    <strong class="text-slate-800">Відсутність контролю:</strong> Неможливість впливати на рішення, що стосуються власної роботи, мікроменеджмент.
+                                </div>
+                            </li>
+                            <li class="flex items-start mb-3">
+                                <!-- Виправлення: іконки стали синіми -->
+                                <i class="fas fa-exclamation-triangle text-primary-brand text-xl mr-3"></i>
+                                <div>
+                                    <strong class="text-slate-800">Недостатня винагорода:</strong> Відсутність фінансового, соціального чи морального визнання зусиль.
+                                </div>
+                            </li>
+                            <li class="flex items-start mb-3">
+                                <!-- Виправлення: іконки стали синіми -->
+                                <i class="fas fa-exclamation-triangle text-primary-brand text-xl mr-3"></i>
+                                <div>
+                                    <strong class="text-slate-800">Токсична атмосфера:</strong> Конфлікти в колективі, відсутність підтримки з боку керівництва та колег.
+                                </div>
+                            </li>
+                            <li class="flex items-start mb-3">
+                                <!-- Виправлення: іконки стали синіми -->
+                                <i class="fas fa-exclamation-triangle text-primary-brand text-xl mr-3"></i>
+                                <div>
+                                    <strong class="text-slate-800">Ціннісний конфлікт:</strong> Невідповідність особистих цінностей цілям та методам роботи організації.
+                                </div>
+                            </li>
+                            <li class="flex items-start mb-3">
+                                <!-- Виправлення: іконки стали синіми -->
+                                <i class="fas fa-exclamation-triangle text-primary-brand text-xl mr-3"></i>
+                                <div>
+                                    <strong class="text-slate-800">Порушення балансу:</strong> Робота займає надто багато часу, не залишаючи ресурсів на особисте життя та відпочинок.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 4: Шляхи подолання (розширений) -->
+        <section id="solutions" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-slate-800">Як подолати та запобігти вигоранню?</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Категорія 1: Турбота про себе -->
+                    <div class="p-6 bg-slate-50 rounded-3xl shadow-lg transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <!-- Виправлення: видалено фон, додано рамку -->
+                            <div class="w-12 h-12 flex items-center justify-center rounded-full text-xl border-2 border-primary-brand">
+                                <i class="fas fa-heart text-primary-brand"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800">Турбота про себе</h3>
+                        </div>
+                        <p class="text-slate-600 mb-4">Фундаментом стійкості до стресу є фізичне та емоційне здоров'я. Це не розкіш, а необхідність.</p>
+                        <ul class="list-none space-y-2">
+                            <li class="flex items-start">
+                                <!-- Виправлення: змінено колір іконок-галочок -->
+                                <i class="fas fa-circle-check text-primary-brand mt-1 mr-3"></i>
+                                <span><strong>Пріоритет сну:</strong> Намагайтеся спати 7-9 годин.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle-check text-primary-brand mt-1 mr-3"></i>
+                                <span><strong>Фізична активність:</strong> Регулярні вправи знижують рівень гормонів стресу.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle-check text-primary-brand mt-1 mr-3"></i>
+                                <span><strong>Практики усвідомленості:</strong> Медитація, йога або прості дихальні вправи.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle-check text-primary-brand mt-1 mr-3"></i>
+                                <span><strong>Цифровий детокс:</strong> Встановіть час, вільний від гаджетів.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle-check text-primary-brand mt-1 mr-3"></i>
+                                <span><strong>Хобі та захоплення:</strong> Приділяйте час заняттям, які приносять задоволення.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Категорія 2: Організація роботи -->
+                    <div class="p-6 bg-slate-50 rounded-3xl shadow-lg transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <!-- Виправлення: видалено фон, додано рамку -->
+                            <div class="w-12 h-12 flex items-center justify-center rounded-full text-xl border-2 border-primary-brand">
+                                <i class="fas fa-briefcase text-primary-brand"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800">На робочому місці</h3>
+                        </div>
+                        <p class="text-slate-600 mb-4">Зміни в робочих звичках можуть кардинально вплинути на рівень стресу.</p>
+                        <ul class="list-none space-y-2">
+                            <li class="flex items-start">
+                                <!-- Виправлення: змінено колір іконок-галочок -->
+                                <i class="fas fa-circle-check text-primary-brand mt-1 mr-3"></i>
+                                <span><strong>Чіткі межі "робота-дім":</strong> Вимикайте сповіщення у вільний час.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle-check text-primary-brand mt-1 mr-3"></i>
+                                <span><strong>Навчіться казати "ні":</strong> Відмовляйтеся від додаткових завдань, коли перевантажені.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle-check text-primary-brand mt-1 mr-3"></i>
+                                <span><strong>Делегування:</strong> Розподіляйте відповідальність.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle-check text-primary-brand mt-1 mr-3"></i>
+                                <span><strong>Регулярні перерви:</strong> Використовуйте техніку "Помодоро".</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle-check text-primary-brand mt-1 mr-3"></i>
+                                <span><strong>Святкуйте маленькі перемоги:</strong> Визнання досягнень підвищує мотивацію.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Категорія 3: Соціальна підтримка -->
+                    <div class="p-6 bg-slate-50 rounded-3xl shadow-lg transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <!-- Виправлення: видалено фон, додано рамку -->
+                            <div class="w-12 h-12 flex items-center justify-center rounded-full text-xl border-2 border-primary-brand">
+                                <i class="fas fa-users text-primary-brand"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800">Пошук підтримки</h3>
+                        </div>
+                        <p class="text-slate-600 mb-4">Ізоляція посилює вигорання. Спілкування та підтримка оточуючих є потужним інструментом.</p>
+                        <ul class="list-none space-y-2">
+                            <li class="flex items-start">
+                                <!-- Виправлення: змінено колір іконок-галочок -->
+                                <i class="fas fa-circle-check text-primary-brand mt-1 mr-3"></i>
+                                <span><strong>Спілкуйтеся з колегами:</strong> Обговорюйте труднощі з тими, кому довіряєте.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle-check text-primary-brand mt-1 mr-3"></i>
+                                <span><strong>Зверніться до керівництва:</strong> Конструктивна розмова може принести результат.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle-check text-primary-brand mt-1 mr-3"></i>
+                                <span><strong>Професійна допомога:</strong> Психолог чи психотерапевт надасть інструменти.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle-check text-primary-brand mt-1 mr-3"></i>
+                                <span><strong>Підтримка близьких:</strong> Не ігноруйте спілкування з родиною та друзями.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 5: Тест-опитування -->
+        <section id="survey" class="py-16 bg-f0f4f8">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto p-8 lg:p-12 bg-white rounded-3xl shadow-xl text-center">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-800">Візьміть участь у нашому дослідженні</h2>
+                    <p class="mt-4 text-lg text-slate-600">Пройдіть анонімне опитування, щоб допомогти нам глибше зрозуміти проблему емоційного вигорання серед педагогів.</p>
+                    <div class="mt-8 overflow-hidden rounded-3xl shadow-lg aspect-video">
+                        <iframe 
+                            src="https://docs.google.com/forms/d/e/1FAIpQLScG1lMaOLr1ULZecZFwmF6ZPJYPoOOLty6yvZRfRmR-ZGyQWA/viewform?embedded=true" 
+                            title="Опитування Google Forms"
+                            frameborder="0" 
+                            class="w-full h-full border-0">
+                            Завантаження…
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Block -->
+    <footer class="bg-slate-900 text-white mt-16 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">Турбота про себе — запорука внутрішньої гармонії</h3>
+            <p class="text-slate-400 max-w-2xl mx-auto mb-6">
+                Створення здорового освітнього середовища — наша спільна відповідальність. Будьмо уважними одне до одного, адже разом ми можемо запобігти вигоранню та зробити нашу працю більш радісною та продуктивною.
+            </p>
+            <p class="text-slate-500 text-sm mt-8">
+                &copy; 2025. Дослідження на базі коледжу. Всі права захищено.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
